@@ -1,7 +1,7 @@
 # 2023_wa_sz_petrik
-nocom
 
-# Ananas **nepatří** na PIZZU
+
+# Ananas *nepatří* na PIZZU
 
 - Za prvé, chutí a texturou ananasu se **neslučuje** s tradičními italskými pizzovými ingrediencemi, jako jsou rajčatová omáčka, sýr a těsto. Kyselá a sladká chuť ananasu může přebít další složky pizzy a narušit harmonii chutí, kterou má pizza nabídnout.
 
@@ -13,7 +13,7 @@ nocom
 
  [Pineapple pizza, a disgrace to humanity](https://thspublications.com/opinion/2019/04/29/pineapple-pizza-a-disgrace-to-humanity/ "Very true!")
 
- | Mám rád Pizzu ↓ Mám rád ananas →  | NE                     | ANO           |
-|----------------------------------|------------------------|---------------|
-| ANO                              | Jsem mentálně stabilní | Špatně        |
-| NE                               | Nevím co je dobré      | Zdravá výživa |
+| X  |                       |         |
+|----------------------------------|------------------------|------------------|
+|   |     X    |             |
+|   |     O    |          O   |
