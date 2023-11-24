@@ -14,3 +14,12 @@ p.male{
     line-height: 100%;
     font-size: 50%;
 }
+
+.images{
+    
+    display: block;
+   
+    margin: 1cm;
+    padding: 10%;
+    border: 1cm;
+}
