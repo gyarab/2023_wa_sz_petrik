@@ -15,11 +15,11 @@ p.male{
     font-size: 50%;
 }
 
-.images{
+img{
     
     display: block;
-   
+    height: 5cm;
     margin: 1cm;
-    padding: 10%;
-    border: 1cm;
+    /*padding: 10%;*/
+    /*border: 1cm;*/
 }
