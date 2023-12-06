@@ -1,29 +1,71 @@
 let el = document.getElementById('stav-hry');
-let counter = 5;
 
 let turned = 0;
 let cardTurn1
 let cardTurn2
+let Pairs = 0
+
+const cardImageSources = [
+    'Images/bedrock.png',
+    'Images/bee_nest_front_honey.png',
+    'Images/cactus_side.png',
+    'Images/carved_pumpkin.png',
+    'Images/cobblestone.png',
+    'Images/crafting_table.png',
+    'Images/diamond_ore.png',
+    'Images/dirt.png',
+    'Images/gold_block.png',
+    'Images/nether_quartz_ore.png',
+    'Images/oak_planks.png',
+    'Images/On_Furnace.png',
+    'Images/piston_side.png',
+    'Images/prismarine_bricks.png',
+    'Images/red_mushroom_block.png',
+
+    'Images/bedrock.png',
+    'Images/bee_nest_front_honey.png',
+    'Images/cactus_side.png',
+    'Images/carved_pumpkin.png',
+    'Images/cobblestone.png',
+    'Images/crafting_table.png',
+    'Images/diamond_ore.png',
+    'Images/dirt.png',
+    'Images/gold_block.png',
+    'Images/nether_quartz_ore.png',
+    'Images/oak_planks.png',
+    'Images/On_Furnace.png',
+    'Images/piston_side.png',
+    'Images/prismarine_bricks.png',
+    'Images/red_mushroom_block.png',
+];
+
+// Prirazeni obrazku k id
+const cardImageMap = {};
+for (let i = 0; i < cardImageSources.length; i++) {
+    const cardId = `card-${i + 1}`;
+    cardImageMap[cardId] = cardImageSources[i];
+}
+el.innerHTML = "Nalezeny dvojice: " + Pairs;
 
 
-function mojeFce(counter) {
-    el.innerHTML = counter;
-    counter--;
-    if (counter > 0) {
-        setTimeout(mojeFce(counter), 1000);
-    }
+
+
+//Zjisteni predni casti karty
+function clickCard(card) {
+
+    const imageSrc = cardImageMap[card.id];
+    card.innerHTML = `<img src="${imageSrc}">`;    
+    Otocit(card);
 }
 
-mojeFce(5)
 
-function Otocit(card) {   
-    if(card == cardTurn1 || card == cardTurn2){return;}
+//Mechanismus otaceni a prirazeni otocenych karet
+function Otocit(card) {
     
-    if(turned >= 2){resetTurnedCards();}
-    
-    
-    
-    
+    if (card == cardTurn1 || card == cardTurn2) { return; }
+    if (turned >= 2) { resetTurnedCards(); }
+
+
     if (turned < 2) {
         turned++;
         if (turned === 1) {
@@ -33,55 +75,40 @@ function Otocit(card) {
             Match()
         }
     }
-
-    
+    el.innerHTML = "Nalezeny dvojice: " + Pairs;
 }
 
-function Match()
-{
+// Zkouska podobnosti
+function Match() {
     let img1 = cardTurn1.querySelector('img');
     let img2 = cardTurn2.querySelector('img');
-    
-    if (img1 && img2 && img1.src === img2.src) {
+
+    if (img1.src === img2.src) {
         cardTurn1.style.visibility = 'hidden';
         cardTurn1.style.pointerEvents = 'none';
         cardTurn2.style.visibility = 'hidden';
         cardTurn2.style.pointerEvents = 'none';
+        Pairs++
     }
-    
-    
 }
 
 
-
+// reset karet na zadní stranu
 function resetTurnedCards() {
-    
-    cardTurn1.innerHTML = '<img src="Images/end_portal_frame_top.png" alt="karta1">';
-    cardTurn2.innerHTML = '<img src="Images/end_portal_frame_top.png" alt="karta2">';
-    
+
+    cardTurn1.innerHTML = '<img src="Images/end_portal_frame_top.png">';
+    cardTurn2.innerHTML = '<img src="Images/end_portal_frame_top.png">';
     turned = 0;
     cardTurn1 = null;
     cardTurn2 = null;
-    
 
 }
 
 
-el.innerHTML = "Nová hra";
 
-function clickCard(card) {
-    let imageSrc;
 
-    
-    if (card.id === 'card-1') {
-        imageSrc = 'Images/bedrock.png';
-    } else if (card.id === 'card-2') {
-        imageSrc = 'Images/bee_nest_front_honey.png';
-    } else if (card.id === 'card-3') {
-        imageSrc = 'Images/bee_nest_front_honey.png';
-    }
 
-    card.innerHTML = `<img src="${imageSrc}" alt="${card.id}">`;
-    Otocit(card);
-}
+
+
+
 
