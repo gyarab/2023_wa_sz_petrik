@@ -72,7 +72,7 @@ el.innerHTML = "Nová hra";
 function clickCard(card) {
     let imageSrc;
 
-    // Set image source based on card ID or other criteria
+    
     if (card.id === 'card-1') {
         imageSrc = 'Images/bedrock.png';
     } else if (card.id === 'card-2') {
