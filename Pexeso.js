@@ -39,11 +39,24 @@ const cardImageSources = [
     'Images/red_mushroom_block.png',
 ];
 
+//Randomizace listu
+const newArray = cardImageSources 
+for (let i = newArray.length - 1; i > 0; i--) {
+    
+    const j = Math.floor(Math.random() * (i + 1));
+    
+    const temp = newArray[i];
+    newArray[i] = newArray[j];
+    newArray[j] = temp;
+}
+
+
+
 // Prirazeni obrazku k id
 const cardImageMap = {};
 for (let i = 0; i < cardImageSources.length; i++) {
     const cardId = `card-${i + 1}`;
-    cardImageMap[cardId] = cardImageSources[i];
+    cardImageMap[cardId] = newArray[i];
 }
 el.innerHTML = "Nalezeny dvojice: " + Pairs;
 
