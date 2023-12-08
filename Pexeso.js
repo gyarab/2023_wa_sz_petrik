@@ -76,7 +76,7 @@ function clickCard(card) {
 function Otocit(card) {
     
     if (card == cardTurn1 || card == cardTurn2) { return; }
-    if (turned >= 2) { resetTurnedCards(); }
+    //if (turned >= 2) { resetTurnedCards(); }
 
 
     if (turned < 2) {
@@ -103,6 +103,7 @@ function Match() {
         cardTurn2.style.pointerEvents = 'none';
         Pairs++
     }
+    if(Pairs == cardImageSources.length/2){el.innerHTML = "Dobra prace!"}
 }
 
 
