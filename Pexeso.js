@@ -118,11 +118,3 @@ function resetTurnedCards() {
 
 }
 
-
-
-
-
-
-
-
-
