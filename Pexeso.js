@@ -89,6 +89,7 @@ function Otocit(card) {
         }
     }
     el.innerHTML = "Nalezeny dvojice: " + Pairs;
+    if(Pairs == cardImageSources.length/2){el.innerHTML = "Dobra prace!"}
 }
 
 // Zkouska podobnosti
@@ -103,7 +104,7 @@ function Match() {
         cardTurn2.style.pointerEvents = 'none';
         Pairs++
     }
-    if(Pairs == cardImageSources.length/2){el.innerHTML = "Dobra prace!"}
+    
 }
 
 
