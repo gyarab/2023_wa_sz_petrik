@@ -76,7 +76,7 @@ function clickCard(card) {
 function Otocit(card) {
     
     if (card == cardTurn1 || card == cardTurn2) { return; }
-    //if (turned >= 2) { resetTurnedCards(); }
+    if (turned >= 2) { resetTurnedCards(); }
 
 
     if (turned < 2) {
@@ -115,6 +115,5 @@ function resetTurnedCards() {
     turned = 0;
     cardTurn1 = null;
     cardTurn2 = null;
-
 }
 
